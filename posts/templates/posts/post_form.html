@@ -1,0 +1,15 @@
+<h1>Create Post</h1>
+<form method="POST">
+  {% csrf_token %}
+  <label>Title:</label><br />
+  <input type="text" name="title" /><br />
+  <label>Content:</label><br />
+  <textarea name="content"></textarea><br />
+  <label>Author:</label><br />
+  <select name="author">
+    {% for user in users %}
+    <option value="{{ user.id }}">{{ user.username }}</option>
+    {% endfor %}</select
+  ><br />
+  <button type="submit">Create</button>
+</form>

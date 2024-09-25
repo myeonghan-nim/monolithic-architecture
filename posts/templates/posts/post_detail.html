@@ -1,0 +1,21 @@
+<h1>Post Detail</h1>
+<ul>
+  <li>Title: {{ post.title }}</li>
+  <li>
+    Author:
+    <a href="{% url 'user_detail' post.author.id %}"
+      >{{ post.author.username }}</a
+    >
+  </li>
+  <li>Text: {{ post.content }}</li>
+</ul>
+<h2>Comments</h2>
+<ul>
+  {% for comment in post.comments.all %}
+  <li>
+    <a href="{% url 'comment_detail' comment.id %}">{{ comment.content }}</a>
+  </li>
+  {% endfor %}
+  <a href="{% url 'comment_create' post.id %}">Add Comment</a>
+</ul>
+<a href="{% url 'post_list' %}">Back to Post List</a>
