@@ -1,0 +1,18 @@
+<h1>User {{ user.username }}</h1>
+<h2>Posts</h2>
+<ul>
+  {% for post in user.posts.all %}
+  <li>
+    <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+<h2>Comments</h2>
+<ul>
+  {% for comment in user.comments.all %}
+  <li>
+    <a href="{% url 'comment_detail' comment.id %}">{{ comment.text }}</a>
+  </li>
+  {% endfor %}
+</ul>
+<a href="{% url 'user_list' %}">Back to User List</a>
