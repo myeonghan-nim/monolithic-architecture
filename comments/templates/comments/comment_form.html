@@ -1,0 +1,12 @@
+<h1>Add Comment to Post</h1>
+<form method="POST">
+  {% csrf_token %}
+  <textarea name="content"></textarea><br />
+  <label>Author:</label><br />
+  <select name="author">
+    {% for user in users %}
+    <option value="{{ user.id }}">{{ user.username }}</option>
+    {% endfor %}</select
+  ><br />
+  <button type="submit">Add Comment</button>
+</form>

@@ -1,0 +1,7 @@
+<h1>Comments for {{ post.title }}</h1>
+<ul>
+  {% for comment in comments %}
+  <li>{{ comment.content }} by {{ comment.author.username }}</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'comment_create' post.id %}">Add Comment</a>
