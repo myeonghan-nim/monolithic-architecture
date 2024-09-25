@@ -1,0 +1,7 @@
+<h1>Comment to Post</h1>
+<form method="POST">
+  {% csrf_token %}
+  <textarea name="content">{{ comment.content }}</textarea><br />
+  <label>Author:</label>{{ comment.author }}<br />
+  <button type="submit">Edit Comment</button>
+</form>
