@@ -29,15 +29,11 @@ class Migration(migrations.Migration):
                 ("content", models.TextField()),
                 (
                     "author",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="users.user"
-                    ),
+                    models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to="users.user"),
                 ),
                 (
                     "post",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="posts.post"
-                    ),
+                    models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to="posts.post"),
                 ),
             ],
         ),
